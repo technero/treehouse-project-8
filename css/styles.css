@@ -1,8 +1,9 @@
 body {
     position: relative;
+    padding: 10px;
 }
 
-overlay {
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -11,7 +12,7 @@ overlay {
     background: rgba(100, 100, 100, 0.4);
 }
 
-modal {
+.modal {
     width: 375px;
     margin: 15% auto auto;
     position: relative;
@@ -31,4 +32,52 @@ modal {
 
 .hidden {
     display: none;
+}
+
+.card {
+    border: 1px solid gainsboro;
+    border-radius: 2%;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    padding: 20px 10px;
+    gap: 20px;
+}
+
+.text-container>* {
+    margin: 5px;
+}
+
+.grid-container {
+    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 20px;
+
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    size: small;
+    border-radius: 50%;
+}
+
+.email,
+.address,
+.text-container>p {
+    color: rgb(178, 186, 192);
+}
+
+.text-container>* {
+    margin: 10px;
+}
+
+hr {
+    margin: 15px;
+}
+
+.modal-close {
+    background-color: white;
+    border-style: hidden;
 }

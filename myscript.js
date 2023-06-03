@@ -3,7 +3,7 @@ let employees = [];
 const urlAPI = 'https://randomuser.me/api/?results=12&inc=name,picture,email,location,phone,dob&noinfo&nat=US';
 const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
-const modalContainer = document.querySelector(".modal-content");
+const modalContainer = document.querySelector(".modal-container");
 const modalClose = document.querySelector(".modal-close");
 
 // fetch data from API
@@ -59,15 +59,17 @@ function displayModal(index) {
 </div>
 `;
     overlay.classList.remove("hidden");
+    console.log(overlay);
     modalContainer.innerHTML = modalHTML;
 }
 
 gridContainer.addEventListener('click', e => {
-
     if (e.target !== gridContainer) {
 
         const card = e.target.closest(".card");
+        console.log(card);
         const index = card.getAttribute("data-index");
+
         displayModal(index);
     }
 });
