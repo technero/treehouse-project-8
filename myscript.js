@@ -5,6 +5,8 @@ const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-container");
 const modalClose = document.querySelector(".modal-close");
+const header = document.querySelector(".title");
+header.textContent = header.textContent.toUpperCase();
 
 // fetch data from API
 fetch(urlAPI)
@@ -54,7 +56,7 @@ function displayModal(index) {
 <p class="address">${city}</p>
 <hr/>
 <p>${phone}</p>
-<p class="address">${street}, ${state} ${postcode}</p>
+<p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
 <p>Birthday: ${("0" + (date.getMonth() + 1)).slice(-2)}/${("0" + date.getDate()).slice(-2)}/${date.getFullYear()}</p>
 </div>
 `;
