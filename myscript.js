@@ -7,7 +7,6 @@ const modalContainer = document.querySelector(".modal-container");
 const modalClose = document.querySelector(".modal-close");
 const header = document.querySelector(".title");
 header.textContent = header.textContent.toUpperCase();
-
 // fetch data from API
 fetch(urlAPI)
   .then(res => res.json())
@@ -15,12 +14,9 @@ fetch(urlAPI)
   .then(displayEmployees)
   .catch(err => console.log(err))
 
-
 function displayEmployees(employeeData) {
   employees = employeeData;
-
   // store the employee and creat HTML markup
-
   let employeeHTML = "";
   employees.forEach((employee, index) => {
     let name = employee.name;
@@ -41,13 +37,9 @@ function displayEmployees(employeeData) {
   });
   gridContainer.innerHTML = employeeHTML;
 }
-
 function displayModal(index) {
-
   let { name, dob, phone, email, location: { city, street, state, postcode }, picture } = employees[index];
-
   let date = new Date(dob.date);
-
   const modalHTML = `
 <img class= "avatar" src= "${picture.large}"/> 
 <div class="text-container">
@@ -64,17 +56,13 @@ function displayModal(index) {
   console.log(overlay);
   modalContainer.innerHTML = modalHTML;
 }
-
 gridContainer.addEventListener('click', e => {
   if (e.target !== gridContainer) {
-
     const card = e.target.closest(".card");
     const index = card.getAttribute("data-index");
-
     displayModal(index);
   }
 });
-
 modalClose.addEventListener('click', () => {
   overlay.classList.add("hidden");
 });
